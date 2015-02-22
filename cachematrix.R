@@ -1,5 +1,5 @@
 ## The goal of this assignment was to create an R function that is able to cache potentially time-consuming computations:
-## in this example, taking the ivert of a matrix. 
+## in this example, taking the inverse of a matrix. 
 ## If the contents of a matrix is not changing, it may make sense to cache the value of the ivert so that when 
 ## we need it again, it can be looked up in the cache rather than recomputed. 
 
@@ -36,7 +36,7 @@ cacheSolve <- function(x, ...) {
     return(inv)
   }
   data <- x$get()
-  inv <- solve(data)
+  inv <- solve(data, ...)
   x$setinv(inv)
   inv
 }
